@@ -2,13 +2,78 @@
   text-align: center;
 }
 
-#demo1, #demo2 {
-  font-size: 3em;
+.clock {
+  width: 100%;
+  border: 1px solid #fff;
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.time, .label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.label {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding-left: 12%;
+  padding-right: 12%;
+  color: #aaaaaa;
+}
+
+.colon {
+  font-size: 1.4em;
+}
+
+#days, #hours, #minutes, #seconds {
+  font-size: 3.3em;
   font-weight: bold;
   letter-spacing: 0.03em;
+}
+
+#days, #days-label {
+  margin-left: 20px;
+}
+
+#minutes-label {
+  margin-left: -5%;
+}
+
+#seconds, #seconds-label {
+  margin-right: 20px;
+}
+
+#seconds-label {
+  margin-right: 25px;
 }
 
 #situation {
   font-size: 2em;
   font-weight: bold;
+}
+
+@media screen and (max-width: 608px) {
+  #days, #hours, #minutes, #seconds {
+    font-size: 2.5em;
+  }
+
+  #days {
+    margin-left: 10px;
+  }
+
+  #seconds {
+    margin-right: 10px;
+  }
+
+  #situation {
+    font-size: 1.5em;
+  }
 }

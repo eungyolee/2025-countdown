@@ -14,33 +14,61 @@ function App() {
     const distance = countDownDate - now;
 
     // 남은 시간 계산
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-    const minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
-    const seconds = Math.floor(distance % (1000 * 60) / 1000);
+    const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(3, '0');
+    const hours = String(Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))).padStart(2, '0');
+    const minutes = String(Math.floor(distance % (1000 * 60 * 60) / (1000 * 60))).padStart(2, '0');
+    const seconds = String(Math.floor(distance % (1000 * 60) / 1000)).padStart(2, '0');
 
-    const second = days * 86400 + hours * 3600 + minutes * 60 + seconds;
+    // const second = days * 86400 + hours * 3600 + minutes * 60 + seconds;
 
     // 출력
-    document.getElementById("demo1").innerHTML = days + "일 " + hours + "시간 "
-    + minutes + "분 " + seconds + "초";
-    document.getElementById("demo2").innerHTML = second + "초";
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
     document.getElementById("situation").innerHTML = "이 시간만 기다리면 2025년이라고?";
+
+    // 콜론 깜빡이게
+    const colon = document.querySelectorAll('.colon');
+    colon.forEach((item) => {
+      item.classList.add('hidden');
+      setTimeout(() => {
+        item.classList.remove('hidden');
+      }, 500);
+    });
 
     // 종료 시간이 지나면 출력
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("demo1").innerHTML = "아니 잠깐만";
-      document.getElementById("demo2").innerHTML = "이미 2025년이라고?";
-      document.getElementById("situation").innerHTML = "나 왜 한 살 더 먹냐?";
+      document.getElementById("days").innerHTML = "000";
+      document.getElementById("hours").innerHTML = "00";
+      document.getElementById("minutes").innerHTML = "00";
+      document.getElementById("seconds").innerHTML = "00";
+      document.getElementById("situation").innerHTML = "Happy New Year 2025!";
     }
-  }, 500);
+  }, 1000);
+
 
   return (
     <div className="App">
       <header className="App-header">
-        <h2 id="demo1"> </h2>
-        <h2 id="demo2"> </h2>
+        <div className="clock">
+          <div className="time">
+            <h2 id="days"> </h2>
+            <span className="colon">:</span>
+            <h2 id="hours"> </h2>
+            <span className="colon">:</span>
+            <h2 id="minutes"> </h2>
+            <span className="colon">:</span>
+            <h2 id="seconds"> </h2>
+          </div>
+          <div className="label">
+            <h3 id="days-label">일</h3>
+            <h3 id="hours-label">시간</h3>
+            <h3 id="minutes-label">분</h3>
+            <h3 id="seconds-label">초</h3>
+          </div>
+        </div>
         <h3 id="situation"> </h3>
         <p>Copyright 2023. 이은교 all rights reserved.
           <br />2024년 1월 1일 제작됨.

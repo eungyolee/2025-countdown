@@ -20,6 +20,20 @@ body {
   justify-content: center;
 }
 
+h2 {
+  margin-top: 37px;
+  margin-bottom: 37px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
 p {
   line-height: 2;
+}
+
+.hidden {
+  display: none;
 }
