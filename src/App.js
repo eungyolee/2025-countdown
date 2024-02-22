@@ -70,7 +70,7 @@ function App() {
           </div>
         </div>
         <h3 id="situation"> </h3>
-        <p>Copyright 2023. 이은교 all rights reserved.
+        <p>Copyright 2024. 이은교 all rights reserved.
           <br />2024년 1월 1일 제작됨.
         </p>
       </header>
