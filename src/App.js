@@ -19,14 +19,12 @@ function App() {
     const minutes = String(Math.floor(distance % (1000 * 60 * 60) / (1000 * 60))).padStart(2, '0');
     const seconds = String(Math.floor(distance % (1000 * 60) / 1000)).padStart(2, '0');
 
-    // const second = days * 86400 + hours * 3600 + minutes * 60 + seconds;
-
     // 출력
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-    document.getElementById("situation").innerHTML = "이 시간만 기다리면 2025년이라고?";
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+    document.getElementById("situation").textContent = "이 시간만 기다리면 2025년이라고?";
 
     // 콜론 깜빡이게
     const colon = document.querySelectorAll('.colon');
@@ -40,11 +38,11 @@ function App() {
     // 종료 시간이 지나면 출력
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("days").innerHTML = "000";
-      document.getElementById("hours").innerHTML = "00";
-      document.getElementById("minutes").innerHTML = "00";
-      document.getElementById("seconds").innerHTML = "00";
-      document.getElementById("situation").innerHTML = "Happy New Year 2025!";
+      document.getElementById("days").textContent = "000";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      document.getElementById("seconds").textContent = "00";
+      document.getElementById("situation").textContent = "Happy New Year 2025!";
     }
   }, 1000);
 
