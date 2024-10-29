@@ -68,7 +68,9 @@ function App() {
           </div>
         </div>
         <h3 id="situation"> </h3>
-        <p>Copyright 2024. 리은교 all rights reserved.
+        <p>Copyright 2024. 이은교 all rights reserved.
+          <br />2024년 1월 1일 개발되어 10월 29일 수정함.
+          <br />기만자 백승우 사퇴하라
         </p>
       </header>
     </div>
