@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   // 2024년 12월 17일 기말고사 
-  const countDownDate = new Date("Dec 17, 2024 08:50:00").getTime();
+  const countDownDate = new Date("Nov 13, 2025 09:00:00").getTime();
 
   // 1초마다 갱신
   const x = setInterval(function() {
@@ -24,7 +24,7 @@ function App() {
     document.getElementById("hours").textContent = hours;
     document.getElementById("minutes").textContent = minutes;
     document.getElementById("seconds").textContent = seconds;
-    document.getElementById("situation").textContent = "이 시간만 기다리면 기말고사라고?";
+    document.getElementById("situation").textContent = "페이즈 할아바지 babo";
 
     // 콜론 깜빡이게
     const colon = document.querySelectorAll('.colon');
@@ -69,8 +69,8 @@ function App() {
         </div>
         <h3 id="situation"> </h3>
         <p>Copyright 2024. 이은교 all rights reserved.
-          <br />2024년 1월 1일 개발되어 10월 29일 수정함.
-          <br />기만자 백승우 사퇴하라
+          <br />2024년 11월 13일 개발되어 11월 13일 수정함.
+          <br />페이즈 할아버지 공부하세요
         </p>
       </header>
     </div>
